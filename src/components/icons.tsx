@@ -1,4 +1,12 @@
-import { ChevronsUpDown, Store, Check, PlusCircleIcon, Trash, } from "lucide-react";
+import {
+  ChevronsUpDown,
+  Store,
+  Check,
+  PlusCircleIcon,
+  Trash,
+  Server,
+  Copy,
+} from "lucide-react";
 
 export const Icons = {
   store: Store,
@@ -6,4 +14,6 @@ export const Icons = {
   check: Check,
   plus: PlusCircleIcon,
   trash: Trash,
+  server: Server,
+  copy: Copy,
 };

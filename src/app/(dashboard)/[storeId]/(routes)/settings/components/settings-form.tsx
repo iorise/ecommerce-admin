@@ -22,6 +22,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { AlertModal } from "@/components/modals/alert-modal";
+import { ApiAlert } from "@/components/ui/api-alert";
+import { useOrigin } from "@/hooks/use-origin";
 
 interface SettingsFormProps {
   initialData: Store;
@@ -36,6 +39,8 @@ type SettingFormValues = z.infer<typeof formSchema>;
 export function SettingsForm({ initialData }: SettingsFormProps) {
   const params = useParams();
   const router = useRouter();
+  const origin = useOrigin();
+
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
@@ -57,8 +62,29 @@ export function SettingsForm({ initialData }: SettingsFormProps) {
     }
   };
 
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+      await axios.delete(`/api/stores/${params.storeId}`);
+      router.refresh();
+      router.push("/");
+      toast.success("Store deleted");
+    } catch (error) {
+      toast.error("Make sure you remove all products and categories first");
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
+
   return (
     <>
+      <AlertModal
+        loading={loading}
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        onConfirm={onDelete}
+      />
       <div className="flex items-center justify-between">
         <Heading title="Settings" description="Manage your preferences" />
         <Button
@@ -105,6 +131,12 @@ export function SettingsForm({ initialData }: SettingsFormProps) {
           </Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert
+        title="NEXT_PUBLIC_API_URL"
+        description={`${origin}/api/${params.storeId}`}
+        variant="public"
+      />
     </>
   );
 }
