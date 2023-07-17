@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 import prismaDb from "@/lib/prismadb";
+import { SiteHeader } from "@/components/layouts/site-header";
 
 export default async function DashboardLayout({
   children,
@@ -30,7 +31,7 @@ export default async function DashboardLayout({
 
   return (
     <>
-      <div>navbar</div>
+      <SiteHeader />
       {children}
     </>
   );
