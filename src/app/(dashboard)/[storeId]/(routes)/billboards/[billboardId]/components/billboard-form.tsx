@@ -23,7 +23,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { AlertModal } from "@/components/modals/alert-modal";
-import { ApiAlert } from "@/components/ui/api-alert";
 import { useOrigin } from "@/hooks/use-origin";
 import ImageUpload from "@/components/ui/image-upload";
 
@@ -41,7 +40,6 @@ interface BillboardFormProps {
 export function BillboardForm({ initialData }: BillboardFormProps) {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -87,7 +85,7 @@ export function BillboardForm({ initialData }: BillboardFormProps) {
         `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
-      router.push("/");
+      router.push(`/${params.storeId}/billboards`);
       toast.success("Billboard deleted");
     } catch (error) {
       toast.error(

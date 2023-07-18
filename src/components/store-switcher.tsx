@@ -67,7 +67,12 @@ export default function StoreSwitcher({
         >
           <Icons.store className="mr-2 h-4 w-4" />
           {currentStore?.label}
-          <Icons.chevronsUpDown className="h-4 w-4 ml-auto shrink-0 opacity-50" />
+          <Icons.chevronsUp
+            className={cn(
+              "h-4 w-4 ml-auto shrink-0 opacity-50 transition-all",
+              open ? "" : "-rotate-180"
+            )}
+          />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">

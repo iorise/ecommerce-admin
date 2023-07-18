@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { UserButton, auth } from "@clerk/nextjs";
 
 import { MainNav } from "@/components/layouts/main-nav";
 import StoreSwitcher from "@/components/store-switcher";
@@ -22,6 +22,7 @@ export async function SiteHeader() {
       <div className="container flex space-x-4 h-16 items-center">
         <StoreSwitcher items={stores} />
         <MainNav />
+        <UserButton/>
       </div>
     </header>
   );
