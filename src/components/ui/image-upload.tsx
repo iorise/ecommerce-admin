@@ -56,9 +56,9 @@ export default function ImageUpload({
             <Image
               src={url}
               alt="image"
-              width={200}
-              height={200}
-              className="object-cover"
+              width={500}
+              height={500}
+              className="aspect-square w-full object-cover rounded-lg"
             />
           </div>
         ))}
