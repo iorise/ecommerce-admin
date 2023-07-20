@@ -10,7 +10,8 @@ import {
   ChevronsDownUp,
   ChevronUp,
   MoreHorizontal,
-  Edit
+  Edit,
+  Menu,
 } from "lucide-react";
 
 export const Icons = {
@@ -26,4 +27,5 @@ export const Icons = {
   chevronsUp: ChevronUp,
   moreHorizontal: MoreHorizontal,
   edit: Edit,
+  menu: Menu,
 };
