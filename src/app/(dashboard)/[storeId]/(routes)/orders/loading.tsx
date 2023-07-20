@@ -6,7 +6,7 @@ export default function Loading() {
   return (
     <Shell>
       <div className="flex items-center justify-between">
-        <Skeleton className="h-14 w-72" />
+        <Skeleton className="h-14 w-56" />
         <Skeleton className="h-10 w-32" />
       </div>
       <Separator />
