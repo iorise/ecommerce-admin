@@ -5,6 +5,7 @@ import { OrderClient } from "./components/client";
 import prismaDb from "@/lib/prismadb";
 import { OrderColumn } from "./components/columns";
 import { formatPrice } from "@/lib/utils";
+import { Shell } from "@/components/shell";
 
 export default async function OrdersPage({
   params,
@@ -44,9 +45,9 @@ export default async function OrdersPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <OrderClient data={formattedOrders} />
-      </div>
+      </Shell>
     </div>
   );
 }

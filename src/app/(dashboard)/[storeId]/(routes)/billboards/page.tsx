@@ -4,6 +4,7 @@ import format from "date-fns/format";
 import { BillboardClient } from "./components/client";
 import prismaDb from "@/lib/prismadb";
 import { BillboardColumn } from "./components/columns";
+import { Shell } from "@/components/shell";
 
 export default async function BillboardsPage({
   params,
@@ -26,9 +27,9 @@ export default async function BillboardsPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <BillboardClient data={formattedBillboards} />
-      </div>
+      </Shell>
     </div>
   );
 }

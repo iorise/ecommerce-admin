@@ -6,6 +6,7 @@ import { formatPrice } from "@/lib/utils";
 
 import { ProductClient } from "./components/client";
 import { ProductColumn } from "./components/columns";
+import { Shell } from "@/components/shell";
 
 export default async function ProductsPage({
   params,
@@ -39,9 +40,9 @@ export default async function ProductsPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <ProductClient data={formattedProducts} />
-      </div>
+      </Shell>
     </div>
   );
 }

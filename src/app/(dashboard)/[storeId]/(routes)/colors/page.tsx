@@ -4,6 +4,7 @@ import format from "date-fns/format";
 import { ColorsClient } from "./components/client";
 import prismaDb from "@/lib/prismadb";
 import { ColorColumn } from "./components/columns";
+import { Shell } from "@/components/shell";
 
 export default async function ColorsPage({
   params,
@@ -27,9 +28,9 @@ export default async function ColorsPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <ColorsClient data={formattedColors} />
-      </div>
+      </Shell>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import format from "date-fns/format";
 import { SizesClient } from "./components/client";
 import prismaDb from "@/lib/prismadb";
 import { SizeColumn } from "./components/columns";
+import { Shell } from "@/components/shell";
 
 export default async function SizesPage({
   params,
@@ -27,9 +28,9 @@ export default async function SizesPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <SizesClient data={formattedSizes} />
-      </div>
+      </Shell>
     </div>
   );
 }

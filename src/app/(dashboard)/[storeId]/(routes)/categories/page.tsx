@@ -4,6 +4,7 @@ import format from "date-fns/format";
 import { CategoryClient } from "./components/client";
 import prismaDb from "@/lib/prismadb";
 import { CategoryColumn } from "./components/columns";
+import { Shell } from "@/components/shell";
 
 export default async function CategoriesPage({
   params,
@@ -30,9 +31,9 @@ export default async function CategoriesPage({
   }));
   return (
     <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <Shell>
         <CategoryClient data={formattedCategories} />
-      </div>
+      </Shell>
     </div>
   );
 }
