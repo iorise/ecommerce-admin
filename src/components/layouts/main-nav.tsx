@@ -5,11 +5,17 @@ import { useParams, usePathname } from "next/navigation";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
-export function MainNav({
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLElement>) {
+export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
   const params = useParams();
 
@@ -57,21 +63,25 @@ export function MainNav({
   ];
 
   return (
-    <nav className={cn("hidden gap-4 lg:gap-6 lg:flex", className)} {...props}>
-      {routes.map((route) => (
-        <Link
-          key={route.href}
-          href={route.href}
-          className={cn(
-            "text-sm font medium transition-colors hover:text-primary",
-            route.active
-              ? "text-black dark:text-white"
-              : "text-muted-foreground"
-          )}
-        >
-          {route.label}
-        </Link>
-      ))}
-    </nav>
+    <div className={cn("hidden gap-6 lg:flex", className)}>
+      <NavigationMenu>
+        <NavigationMenuList>
+          {routes.map((item) => (
+            <NavigationMenuItem>
+              <Link key={item.label} href={item.href} legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    item.active ? "bg-[#1e293b]" : ""
+                  )}
+                >
+                  {item.label}
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
 }
