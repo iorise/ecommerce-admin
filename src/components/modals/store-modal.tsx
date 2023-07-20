@@ -1,3 +1,5 @@
+"use client";
+
 import * as z from "zod";
 import * as React from "react";
 import { useForm } from "react-hook-form";
@@ -17,6 +19,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Icons } from "@/components/icons";
 
 const formSchema = z.object({
   name: z.string().min(1, "Store name is required"),
@@ -38,7 +41,7 @@ export function StoreModal() {
     try {
       setLoading(true);
       const response = await axios.post("/api/stores", values);
-      window.location.assign(`/${response.data.id}`)
+      window.location.assign(`/${response.data.id}`);
       toast.success("Store created.");
     } catch (error) {
       toast.error("Something went wrong.");
@@ -84,6 +87,9 @@ export function StoreModal() {
                 Cancel
               </Button>
               <Button disabled={loading} type="submit" size="sm">
+                {loading && (
+                  <Icons.loader className="animate-spin w-4 h-4 mr-2" />
+                )}
                 Continue
               </Button>
             </div>

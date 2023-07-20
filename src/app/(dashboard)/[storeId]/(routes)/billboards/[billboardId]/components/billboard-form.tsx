@@ -167,6 +167,9 @@ export function BillboardForm({ initialData }: BillboardFormProps) {
             size="sm"
             type="submit"
           >
+            {loading && (
+                  <Icons.loader className="animate-spin w-4 h-4 mr-2" />
+                )}
             {action}
           </Button>
         </form>

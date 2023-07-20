@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { Modal } from "@/components/ui/modal";
 import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 interface AlertModalProps {
   isOpen: boolean;
@@ -38,7 +39,9 @@ export function AlertModal({
         <Button disabled={loading} variant="outline" onClick={onClose}>
           Cancel
         </Button>
-        <Button disabled={loading} variant="destructive" onClick={onConfirm}>Continue</Button>
+        <Button disabled={loading} variant="destructive" onClick={onConfirm}>{loading && (
+                  <Icons.loader className="animate-spin w-4 h-4 mr-2" />
+                )} Continue</Button>
       </div>
     </Modal>
   );

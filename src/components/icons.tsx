@@ -12,6 +12,7 @@ import {
   MoreHorizontal,
   Edit,
   Menu,
+  Loader2
 } from "lucide-react";
 
 export const Icons = {
@@ -28,4 +29,5 @@ export const Icons = {
   moreHorizontal: MoreHorizontal,
   edit: Edit,
   menu: Menu,
+  loader: Loader2,
 };

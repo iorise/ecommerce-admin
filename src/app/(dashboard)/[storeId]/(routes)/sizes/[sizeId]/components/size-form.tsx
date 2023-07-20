@@ -160,6 +160,7 @@ export function SizeForm({ initialData }: SizeFormProps) {
             size="sm"
             type="submit"
           >
+            {loading && <Icons.loader className="w-4 h-4 mr-2 animate-spin" />}
             {action}
           </Button>
         </form>
