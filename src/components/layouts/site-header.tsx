@@ -18,11 +18,11 @@ export async function SiteHeader() {
     },
   });
   return (
-    <header className="sticky top-0 z-10 w-full border-b bg-background">
+    <header className="sticky top-0 z-[999] w-full border-b bg-background">
       <div className="container flex space-x-4 h-16 items-center">
         <StoreSwitcher items={stores} />
         <MainNav />
-        <UserButton/>
+        <UserButton />
       </div>
     </header>
   );
