@@ -1,8 +1,6 @@
 "use client"
 
 import * as React from 'react'
-import * as z from "zod"
-
 
 import { useStoreModal } from '@/hooks/use-store-modal'
 

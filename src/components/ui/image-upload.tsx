@@ -34,7 +34,6 @@ export default function ImageUpload({
     return null;
   }
 
-  console.log(localStorage);
   return (
     <div>
       <div className="mb-4 flex items-center gap-4">
