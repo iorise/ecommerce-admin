@@ -33,6 +33,7 @@ import {
 
 const formSchema = z.object({
   name: z.string().min(1),
+  description: z.string().min(1),
   billboardId: z.string().min(1),
 });
 
@@ -59,8 +60,9 @@ export function CategoryForm({ initialData, billboards }: CategoryFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       name: "",
+      description: "",
       billboardId: "",
-    },
+    }  
   });
 
   const onSubmit = async (data: CategoryFormValues) => {
@@ -141,6 +143,23 @@ export function CategoryForm({ initialData, billboards }: CategoryFormProps) {
                     <Input
                       disabled={loading}
                       placeholder="Category name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Description</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Description"
                       {...field}
                     />
                   </FormControl>

@@ -36,6 +36,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(1),
+  description: z.string().min(0),
   images: z.object({ url: z.string() }).array(),
   price: z.coerce.number().min(1),
   categoryId: z.string().min(1),
@@ -79,6 +80,7 @@ export function ProductForm({
       ? { ...initialData, price: parseFloat(String(initialData?.price)) }
       : {
           name: "",
+          description: "",
           images: [],
           price: 0,
           categoryId: "",
@@ -187,6 +189,23 @@ export function ProductForm({
                     <Input
                       disabled={loading}
                       placeholder="Product name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Description</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={loading}
+                      placeholder="Product description"
                       {...field}
                     />
                   </FormControl>
