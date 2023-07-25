@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Ecommerce admin](https://ecommerce-admin-ten-coral.vercel.app/43ecfc5d-554f-4045-8190-50144ebad006/products)
 
-## Getting Started
+This is an CMS for ecommerce store build with next 13
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **Framework:** [Next.js](https://nextjs.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **User Management:** [Clerk](https://clerk.com)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com)
+- **Database:** [MySql with prisma](https://prisma.io)
+- **File upload:** [Cloudinary](https://cloudinary.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Multiple vendors / stores management through a single CMS.
+- [x] Create, update, and delete categories.
+- [x] Create, update, and delete products.
+- [x] Upload multiple images for products and update them easily.
+- [x] Create, update, and delete filters like "Color" and "Size" and link them to product creation.
+- [x] Create, update, and delete "Billboards" with the option to attach them to a single category or use them standalone.
+- [x] Search functionality with pagination for categories, products, sizes, colors, and billboards.
+- [x] Control featured products displayed on the homepage.
