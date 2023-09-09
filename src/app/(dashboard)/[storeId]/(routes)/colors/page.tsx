@@ -27,10 +27,8 @@ export default async function ColorsPage({
     createdAt: format(item.createdAt, "MMMM, do, yyyy"),
   }));
   return (
-    <div className="flex-col">
-      <Shell>
-        <ColorsClient data={formattedColors} />
-      </Shell>
-    </div>
+    <Shell>
+      <ColorsClient data={formattedColors} />
+    </Shell>
   );
 }

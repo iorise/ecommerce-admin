@@ -26,10 +26,8 @@ export default async function BillboardsPage({
     createdAt: format(item.createdAt, "MMMM, do, yyyy"),
   }));
   return (
-    <div className="flex-col">
       <Shell>
         <BillboardClient data={formattedBillboards} />
       </Shell>
-    </div>
   );
 }

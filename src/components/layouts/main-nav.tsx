@@ -16,7 +16,7 @@ export function MainNav({ className }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
   const params = useParams();
 
-  const routes = [
+ const routes = [
     {
       href: `/${params.storeId}`,
       label: "Overview",

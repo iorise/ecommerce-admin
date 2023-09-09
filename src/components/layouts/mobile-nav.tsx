@@ -39,16 +39,16 @@ export function MobileNav() {
       label: "Colors",
     },
     {
-      href: `/${params.storeId}/settings`,
-      label: "Settings",
-    },
-    {
       href: `/${params.storeId}/products`,
       label: "Products",
     },
     {
       href: `/${params.storeId}/orders`,
       label: "Orders",
+    },
+    {
+      href: `/${params.storeId}/settings`,
+      label: "Settings",
     },
   ];
   return (

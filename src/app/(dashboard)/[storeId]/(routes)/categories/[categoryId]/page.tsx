@@ -2,6 +2,7 @@ import React from "react";
 import prismaDb from "@/lib/prismadb";
 
 import { CategoryForm } from "./components/category-form";
+import { Shell } from "@/components/shell";
 
 export default async function CategoryPage({
   params,
@@ -20,10 +21,8 @@ export default async function CategoryPage({
     },
   });
   return (
-    <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
-        <CategoryForm initialData={category} billboards={billboards} />
-      </div>
-    </div>
+    <Shell>
+      <CategoryForm initialData={category} billboards={billboards} />
+    </Shell>
   );
 }

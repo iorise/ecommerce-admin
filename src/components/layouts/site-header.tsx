@@ -18,14 +18,14 @@ export async function SiteHeader() {
       userId,
     },
   });
-  
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex space-x-4 h-16 items-center">
         <StoreSwitcher items={stores} />
         <MainNav />
         <MobileNav />
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end">
           <UserButton />
         </div>
       </div>

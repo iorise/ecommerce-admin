@@ -28,7 +28,7 @@ export function CategoryClient({ data }: CategoryClientProps) {
           description="Manage categories for your store"
         />
         <Button
-          onClick={() => router.push(`/${params.storeId}/categories/new`)}
+          onClick={() => router.push(`/${params.storeId}/categories/new`)} size="sm"
         >
           <Icons.plus className="mr-2 w-4 h-4 " />
           Add new

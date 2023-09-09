@@ -2,6 +2,7 @@ import React from "react";
 import prismaDb from "@/lib/prismadb";
 
 import { BillboardForm } from "./components/billboard-form";
+import { Shell } from "@/components/shell";
 
 export default async function BillboardPage({
   params,
@@ -15,10 +16,8 @@ export default async function BillboardPage({
   });
 
   return (
-    <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
-        <BillboardForm initialData={billboard} />
-      </div>
-    </div>
+    <Shell>
+      <BillboardForm initialData={billboard} />
+    </Shell>
   );
 }

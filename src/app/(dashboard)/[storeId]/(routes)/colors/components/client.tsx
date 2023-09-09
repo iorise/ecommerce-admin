@@ -27,7 +27,7 @@ export function ColorsClient({ data }: ColorsClientProps) {
           title={`Color (${data.length})`}
           description="Manage colors for your store"
         />
-        <Button onClick={() => router.push(`/${params.storeId}/colors/new`)}>
+        <Button onClick={() => router.push(`/${params.storeId}/colors/new`)} size="sm">
           <Icons.plus className="mr-2 w-4 h-4 " />
           Add new
         </Button>

@@ -40,10 +40,8 @@ export default async function ProductsPage({
     createdAt: format(item.createdAt, "MMMM, do, yyyy"),
   }));
   return (
-    <div className="flex-col">
-      <Shell>
-        <ProductClient data={formattedProducts} />
-      </Shell>
-    </div>
+    <Shell>
+      <ProductClient data={formattedProducts} />
+    </Shell>
   );
 }

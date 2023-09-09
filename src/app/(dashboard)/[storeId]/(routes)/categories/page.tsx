@@ -31,10 +31,8 @@ export default async function CategoriesPage({
     createdAt: format(item.createdAt, "MMMM, do, yyyy"),
   }));
   return (
-    <div className="flex-col">
       <Shell>
         <CategoryClient data={formattedCategories} />
       </Shell>
-    </div>
   );
 }

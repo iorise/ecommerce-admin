@@ -44,10 +44,8 @@ export default async function OrdersPage({
     createdAt: format(item.createdAt, "MMMM, do, yyyy"),
   }));
   return (
-    <div className="flex-col">
       <Shell>
         <OrderClient data={formattedOrders} />
       </Shell>
-    </div>
   );
 }

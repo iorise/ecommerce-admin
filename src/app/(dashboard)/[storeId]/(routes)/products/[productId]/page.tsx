@@ -1,6 +1,7 @@
 import prismaDb from "@/lib/prismadb";
 
 import { ProductForm } from "./components/product-form";
+import { Shell } from "@/components/shell";
 
 export default async function ProductPage({
   params,
@@ -35,15 +36,13 @@ export default async function ProductPage({
   });
 
   return (
-    <div className="flex-col">
-      <div className="flex-1 space-y-4 p-8 pt-6">
-        <ProductForm
-          initialData={product}
-          categories={categories}
-          sizes={sizes}
-          colors={colors}
-        />
-      </div>
-    </div>
+    <Shell>
+      <ProductForm
+        initialData={product}
+        categories={categories}
+        sizes={sizes}
+        colors={colors}
+      />
+    </Shell>
   );
 }

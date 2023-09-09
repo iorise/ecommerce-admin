@@ -29,6 +29,7 @@ export function BillboardClient({ data }: BillboardClientProps) {
         />
         <Button
           onClick={() => router.push(`/${params.storeId}/billboards/new`)}
+          size="sm"
         >
           <Icons.plus className="mr-2 w-4 h-4 " />
           Add new

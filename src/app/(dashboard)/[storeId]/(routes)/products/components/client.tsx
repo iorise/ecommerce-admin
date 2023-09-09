@@ -27,7 +27,7 @@ export function ProductClient({ data }: ProductClientProps) {
           title={`Products (${data.length})`}
           description="Manage bilboards for your store"
         />
-        <Button onClick={() => router.push(`/${params.storeId}/products/new`)}>
+        <Button onClick={() => router.push(`/${params.storeId}/products/new`)} size="sm">
           <Icons.plus className="mr-2 w-4 h-4 " />
           Add new
         </Button>

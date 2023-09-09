@@ -63,10 +63,10 @@ export default function StoreSwitcher({
           role="combobox"
           aria-expanded={open}
           aria-label="Select a store"
-          className={cn("w-[200px] justify-between", className)}
+          className={cn("w-36 justify-between", className)}
         >
           <Icons.store className="mr-2 h-4 w-4" />
-          {currentStore?.label}
+          <span className="truncate">{currentStore?.label}</span>
           <Icons.chevronsUp
             className={cn(
               "h-4 w-4 ml-auto shrink-0 opacity-50 transition-all",

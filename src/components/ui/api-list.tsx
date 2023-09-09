@@ -18,7 +18,7 @@ export function ApiList({ entityName, entityIdName }: ApiListProps) {
   const baseUrl = `${origin}/api/${params.storeId}`;
 
   return (
-    <>
+    <div className="grid grid-cols-1 gap-3 w-full">
       <ApiAlert
         title="GET"
         variant="public"
@@ -44,6 +44,6 @@ export function ApiList({ entityName, entityIdName }: ApiListProps) {
         variant="public"
         description={`${baseUrl}/${entityName}/{${entityIdName}}`}
       />
-    </>
+    </div>
   );
 }
